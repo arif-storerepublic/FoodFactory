@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Food Factory</string>
+
+    <!-- Splash screen String -->
+    <string name="splash_app_name">Food Factory</string>
+
+    <!--Location access activity string-->
+    <string name="location_warning">food factory uses your location to show the \n restorents near you</string>
+    <string name="use_current_location"> USE CURRENT LOCATION</string>
+    <string name="use_another_location"> Use another location</string>
+</resources>
