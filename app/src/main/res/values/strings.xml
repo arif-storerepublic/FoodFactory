@@ -30,6 +30,10 @@
 
     <!-- Home fragment String -->
     <string name="hello_home_fragment">Hello Home fragment</string>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 315b3fbcc988772c106cc002afda39e1427938e6
     <string name="restaurant_near_you">50 restaurants near you</string>
     <string name="restaurant_name">The Yuu Cafe</string>
     <string name="restaurant_main_item">Chicken Wings | Pizza | BBQ</string>
@@ -50,6 +54,10 @@
 
     <!-- Search History fragment String -->
     <string name="hello_search_history_fragment">Hello Search History fragment</string>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 315b3fbcc988772c106cc002afda39e1427938e6
     <string name="order_completed">Order Completed</string>
     <string name="order_completed_time">19 Sep 2019, 12.12 pm</string>
     <string name="order_id">Order #72BD0</string>
@@ -69,6 +77,10 @@
 
     <!-- Profile fragment String -->
     <string name="hello_profile_fragment">Hello Profile fragment</string>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 315b3fbcc988772c106cc002afda39e1427938e6
     <string name="username">Arif Rahman</string>
     <string name="email">arif@storerepublic.com</string>
     <string name="edit_profile">Edit Profile</string>
@@ -81,9 +93,15 @@
     <string name="faqs">FAQs</string>
     <string name="about_us">About Us</string>
 
+<<<<<<< HEAD
     <!--Menu Activity Food menu String-->
     <string name="reviewer_name">Arif Rahman</string>
     <string name="reviewer_review">Great service and an absolute outstanding menu</string>
     <string name="reviewer_review_time">Aug 06, 2019</string>
+=======
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+>>>>>>> 315b3fbcc988772c106cc002afda39e1427938e6
 
 </resources>

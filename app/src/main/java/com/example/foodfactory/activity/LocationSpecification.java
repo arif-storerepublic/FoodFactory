@@ -1,4 +1,4 @@
-package com.example.foodfactory;
+package com.example.foodfactory.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.foodfactory.R;
 
 public class LocationSpecification extends AppCompatActivity implements View.OnClickListener {
 
