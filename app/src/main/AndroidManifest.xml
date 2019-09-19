@@ -12,10 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomeActivity"></activity>
-        <activity android:name=".LocationSpecification" />
+        <activity android:name=".activity.HomeActivity"></activity>
+        <activity android:name=".activity.LocationSpecification" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".activity.SplashActivity"
             android:theme="@style/SplashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

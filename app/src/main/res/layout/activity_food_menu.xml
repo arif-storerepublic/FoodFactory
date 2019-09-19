@@ -87,8 +87,7 @@
             android:layout_height="match_parent"
             android:paddingLeft="20dp"
             android:text="Menu Item"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/reviewTxt"
@@ -97,8 +96,7 @@
             android:paddingEnd="20dp"
             android:text="Reviews"
             android:textAlignment="viewEnd"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            android:textSize="25sp" />
 
     </LinearLayout>
 
@@ -130,16 +128,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:clickable="true"
-                android:src="@drawable/btn_cartbutton"
+                android:background="@drawable/shape_button_back"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:focusable="true" />
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/foodMenuRecyView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:listitem="@layout/menu_list_item" />
+                android:focusable="true"
 
+                />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -147,27 +141,3 @@
 
 
 </LinearLayout>
-
-<!--
-   <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/foodMenuRecyView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    tools:listitem="@layout/menu_list_item" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight=".80"
-        android:orientation="horizontal"
-        android:paddingEnd="15dp"
-        android:gravity="end|center">
- <Button
-     android:id="@+id/viewCartBtn"
-     android:layout_width="wrap_content"
-     android:layout_height="wrap_content"
-     android:background="@drawable/btn_cartbutton"
-    />
-
-    </LinearLayout>
--->

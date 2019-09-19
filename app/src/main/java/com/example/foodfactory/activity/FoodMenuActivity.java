@@ -1,10 +1,14 @@
 package com.example.foodfactory.activity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,6 +17,8 @@ import com.daimajia.slider.library.SliderTypes.DefaultSliderView;
 import com.example.foodfactory.R;
 import com.example.foodfactory.adpter.FoodMenuAdapter;
 import com.example.foodfactory.all_interface.FoodMenuListener;
+import com.example.foodfactory.fragment.ResturentFragment;
+import com.example.foodfactory.fragment.ResturentReviewFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -20,10 +26,11 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class FoodMenuActivity extends AppCompatActivity {
+public class FoodMenuActivity extends AppCompatActivity implements View.OnClickListener {
 
-    ArrayList<String> title = new ArrayList<>();
-    FoodMenuAdapter foodMenuAdapter;
+
+    private ResturentFragment mResturentFragment;
+    private ResturentReviewFragment mResturentReviewFragment;
 
     @BindView(R.id.slider)
     SliderLayout slider;
@@ -38,9 +45,9 @@ public class FoodMenuActivity extends AppCompatActivity {
     @BindView(R.id.reviewTxt)
     TextView reviewTxt;
     @BindView(R.id.foodMenuRecyView)
-    RecyclerView foodMenuRecyView;
-    @BindView(R.id.floatingActionButton)
     FloatingActionButton floatingActionButton;
+    @BindView(R.id.menuHomeFragment)
+    FrameLayout menuHomeFragment;
 
 
     @Override
@@ -48,28 +55,39 @@ public class FoodMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_menu);
         ButterKnife.bind(this);
+        initFragment();
 
-        ButterKnife.bind(this);
         // set slider image
         //inflateImageSlider();
 
+        //set listener
+        menuItemTxt.setOnClickListener(this);
+        reviewTxt.setOnClickListener(this);
+        replaceFragment(mResturentFragment);
 
-        title.clear();
-        for (int i = 0; i < 15; i++) {
-            title.add("Spicy Berger" + i);
-        }
-        foodMenuAdapter = new FoodMenuAdapter(this, title);
-        LinearLayoutManager horizontalLayoutManager
-                = new LinearLayoutManager(FoodMenuActivity.this, LinearLayoutManager.VERTICAL, false);
-        foodMenuRecyView.setLayoutManager(horizontalLayoutManager);
-        foodMenuRecyView.setAdapter(foodMenuAdapter);
-        foodMenuAdapter.setAdapterListener(new FoodMenuListener() {
-            @Override
-            public void didPressed(int position) {
-                Toast.makeText(FoodMenuActivity.this, "" + position, Toast.LENGTH_SHORT).show();
-            }
-        });
+
+
     }
+
+    private void initFragment() {
+        mResturentFragment = new ResturentFragment();
+        mResturentReviewFragment = new ResturentReviewFragment();
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (view.getId() == R.id.menuItemTxt) {
+            replaceFragment(mResturentFragment);
+            return;
+        }
+        if (view.getId() == R.id.reviewTxt) {
+            replaceFragment(mResturentReviewFragment);
+            return;
+        }
+
+    }
+
+
 
     private void inflateImageSlider() {
 
@@ -91,5 +109,11 @@ public class FoodMenuActivity extends AppCompatActivity {
 
     }
 
+    //Just replace the one fragment to another fragment
+    private void replaceFragment(Fragment fragment) {
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.menuHomeFragment, fragment);
+        fragmentTransaction.commit();
 
+    }
 }

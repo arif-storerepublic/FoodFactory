@@ -1,4 +1,4 @@
-package com.example.foodfactory;
+package com.example.foodfactory.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 
+import com.example.foodfactory.R;
 import com.example.foodfactory.fragment.Cart;
 import com.example.foodfactory.fragment.HomeFragment;
 import com.example.foodfactory.fragment.NearbyRestaurant;

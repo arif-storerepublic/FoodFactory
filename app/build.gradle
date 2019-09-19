@@ -32,7 +32,6 @@ dependencies {
     --------------------Dependencies for UI Design-----------------------
      */
     // slider image dependency
-
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.nineoldandroids:library:2.4.0'
