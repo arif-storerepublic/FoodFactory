@@ -3,21 +3,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:weightSum="5"
+    android:background="@color/white"
     tools:context=".LocationSpecification">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center">
 
-        <ImageView
+        <com.airbnb.lottie.LottieAnimationView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/location_specification"
-            android:contentDescription="@string/location_warning"/>
+            android:id="@+id/access_location_lv"
+            app:lottie_rawRes="@raw/access_location"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true" />
 
     </LinearLayout>
 
@@ -37,7 +42,7 @@
         <Button
             android:layout_marginTop="15dp"
             android:id="@+id/use_current_location_bt"
-            android:background="@drawable/access_location_button_bg"
+            android:background="@drawable/round_border_fill_color"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/use_current_location"
@@ -46,8 +51,8 @@
 
         <Button
             android:layout_marginTop="30dp"
-            android:id="@+id/use_anther_location"
-            android:background="@drawable/access_another_location_bg"
+            android:id="@+id/use_anther_location_bt"
+            android:background="@drawable/round_fill_color_bg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/use_another_location"
