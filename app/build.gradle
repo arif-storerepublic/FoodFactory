@@ -31,6 +31,21 @@ dependencies {
     /*
     --------------------Dependencies for UI Design-----------------------
      */
+    // slider image dependency
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.daimajia.slider:library:1.1.5@aar'
+    //recyceler view
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    //cardview
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    //Field and method binding for Android views which uses annotation processing
+    implementation 'com.jakewharton:butterknife:10.1.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+    implementation 'com.google.android.material:material:1.0.0'
 
     //Lottie
     implementation 'com.airbnb.android:lottie:3.0.7'
