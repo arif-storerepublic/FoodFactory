@@ -2,24 +2,20 @@ package com.example.foodfactory.activity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.DefaultSliderView;
 import com.example.foodfactory.R;
-import com.example.foodfactory.adpter.FoodMenuAdapter;
-import com.example.foodfactory.all_interface.FoodMenuListener;
 import com.example.foodfactory.fragment.ResturentFragment;
 import com.example.foodfactory.fragment.ResturentReviewFragment;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -29,9 +25,6 @@ import butterknife.ButterKnife;
 public class FoodMenuActivity extends AppCompatActivity implements View.OnClickListener {
 
 
-    private ResturentFragment mResturentFragment;
-    private ResturentReviewFragment mResturentReviewFragment;
-
     @BindView(R.id.slider)
     SliderLayout slider;
     @BindView(R.id.resturentName)
@@ -39,15 +32,19 @@ public class FoodMenuActivity extends AppCompatActivity implements View.OnClickL
     @BindView(R.id.resturentLocation)
     TextView resturentLocation;
     @BindView(R.id.resturentLogo)
-    TextView resturentLogo;
+    ImageView resturentLogo;
     @BindView(R.id.menuItemTxt)
     TextView menuItemTxt;
     @BindView(R.id.reviewTxt)
     TextView reviewTxt;
-    @BindView(R.id.foodMenuRecyView)
-    FloatingActionButton floatingActionButton;
     @BindView(R.id.menuHomeFragment)
     FrameLayout menuHomeFragment;
+    @BindView(R.id.floatingActionButton)
+    Button floatingActionButton;
+    @BindView(R.id.backArrow)
+    ImageView backArrow;
+    private ResturentFragment mResturentFragment;
+    private ResturentReviewFragment mResturentReviewFragment;
 
 
     @Override
@@ -63,8 +60,9 @@ public class FoodMenuActivity extends AppCompatActivity implements View.OnClickL
         //set listener
         menuItemTxt.setOnClickListener(this);
         reviewTxt.setOnClickListener(this);
+        backArrow.setOnClickListener(this);
+        // set default fragment
         replaceFragment(mResturentFragment);
-
 
 
     }
@@ -78,15 +76,16 @@ public class FoodMenuActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
         if (view.getId() == R.id.menuItemTxt) {
             replaceFragment(mResturentFragment);
-            return;
+            //return;
         }
         if (view.getId() == R.id.reviewTxt) {
             replaceFragment(mResturentReviewFragment);
-            return;
+            //return;
+        }if (view.getId() == R.id.backArrow) {
+            this.finish();
         }
 
     }
-
 
 
     private void inflateImageSlider() {

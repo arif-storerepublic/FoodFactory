@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.foodfactory.R;
 import com.example.foodfactory.all_interface.FoodMenuListener;
 
@@ -19,6 +20,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class FoodMenuAdapter extends RecyclerView.Adapter<FoodMenuAdapter.ViewHolder> {
+
 
     private Context mContext;
     private ArrayList<String> foodArrayList = new ArrayList<>();
@@ -48,13 +50,13 @@ public class FoodMenuAdapter extends RecyclerView.Adapter<FoodMenuAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
-        final String name=foodArrayList.get(position);
+        final String name = foodArrayList.get(position);
         holder.menuTitleId.setText(name);
 
         holder.menuImageId.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(foodMenuListener!=null){
+                if (foodMenuListener != null) {
                     foodMenuListener.didPressed(position);
                 }
             }
@@ -67,7 +69,6 @@ public class FoodMenuAdapter extends RecyclerView.Adapter<FoodMenuAdapter.ViewHo
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-
         @BindView(R.id.menuImageId)
         ImageView menuImageId;
         @BindView(R.id.menuTitleId)
@@ -75,7 +76,7 @@ public class FoodMenuAdapter extends RecyclerView.Adapter<FoodMenuAdapter.ViewHo
         @BindView(R.id.menuPizeId)
         TextView menuPizeId;
         @BindView(R.id.menuWishlistId)
-        TextView menuWishlistId;
+        ImageView menuWishlistId;
         @BindView(R.id.menuMinusIcon)
         TextView menuMinusIcon;
         @BindView(R.id.menuValueId)
@@ -84,6 +85,7 @@ public class FoodMenuAdapter extends RecyclerView.Adapter<FoodMenuAdapter.ViewHo
         TextView menuPlusIcon;
         @BindView(R.id.menuAddBtn)
         Button menuAddBtn;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);

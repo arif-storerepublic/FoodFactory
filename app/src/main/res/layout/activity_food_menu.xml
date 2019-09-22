@@ -28,41 +28,54 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:pager_animation="Default"
-                app:pager_animation_span="1100" />
+                app:pager_animation_span="1100">
+
+                <ImageView
+                    android:id="@+id/backArrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/ic_arrow_back_white_24dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </com.daimajia.slider.library.SliderLayout>
 
             <TextView
                 android:id="@+id/resturentName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="7dp"
+                android:text="Westin resturent"
                 android:textColor="#ffffff"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/resturentLogo"
-                app:layout_constraintTop_toTopOf="@+id/resturentLogo"
-                android:text="Westin resturent" />
+                app:layout_constraintTop_toTopOf="@+id/resturentLogo" />
 
             <TextView
                 android:id="@+id/resturentLocation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="7dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginBottom="16dp"
                 android:drawableStart="@drawable/ic_location_on_black_24dp"
-                android:drawablePadding="5dp"
+                android:text="@string/current_location"
                 android:textColor="#ffffff"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/resturentLogo"
-                app:layout_constraintTop_toBottomOf="@+id/resturentName"
-                android:text="@string/current_location" />
+                app:layout_constraintTop_toBottomOf="@+id/resturentName" />
 
             <ImageView
                 android:id="@+id/resturentLogo"
                 android:layout_width="60dp"
                 android:layout_height="40dp"
                 android:layout_alignParentBottom="true"
+                android:layout_marginStart="8dp"
                 android:layout_marginBottom="16dp"
+                android:background="@drawable/shape_res_icon"
                 android:paddingLeft="10dp"
-                android:background="@drawable/shapa_image_back"
-                android:src="@drawable/restaurant_logo"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -75,7 +88,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight=".7"
+        android:layout_weight=".5"
         android:elevation="5dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
@@ -87,7 +100,7 @@
             android:layout_height="match_parent"
             android:paddingLeft="20dp"
             android:text="Menu Item"
-            android:textSize="25sp" />
+            android:textSize="22sp" />
 
         <TextView
             android:id="@+id/reviewTxt"
@@ -96,16 +109,16 @@
             android:paddingEnd="20dp"
             android:text="Reviews"
             android:textAlignment="viewEnd"
-            android:textSize="25sp" />
+            android:textSize="22sp" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:padding="5dp"
-        android:layout_weight="6.80"
-       >
+        android:layout_weight="7"
+        android:padding="5dp">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -120,20 +133,27 @@
                 app:layout_constraintTop_toTopOf="parent">
 
 
-
             </FrameLayout>
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
+            <Button
                 android:id="@+id/floatingActionButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:clickable="true"
+                android:layout_marginEnd="16dp"
                 android:background="@drawable/shape_button_back"
+                android:clickable="true"
+                android:elevation="10dp"
+                android:focusable="true"
+                android:padding="5dp"
+                android:shadowColor="#D6C6C6"
+                android:text="View Cart"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:focusable="true"
-
-                />
+                tools:ignore="PrivateResource" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
